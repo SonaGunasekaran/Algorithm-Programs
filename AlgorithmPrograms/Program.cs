@@ -4,9 +4,12 @@ namespace AlgorithmPrograms
 {
     class Program
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Welcome to Algorithm Programs ");
-        }
+            public static void Main()
+            {
+                String str = "ABC";
+                int n = str.Length;
+               Permutation.Permute(str, 0, n - 1);
+            }
+        
     }
 }
