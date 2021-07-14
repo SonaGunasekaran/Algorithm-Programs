@@ -7,41 +7,31 @@ namespace AlgorithmPrograms
     class Permutation
     {
         public static void Permute(String str,
-                                int l, int r)
+                                int start, int end)
         {
-            if (l == r)
+            if (start == end)
                 Console.WriteLine(str);
             else
             {
-                for (int i = l; i <= r; i++)
+                for (int i = start; i <= end; i++)
                 {
-                    str = Swap(str, l, i);
-                    Permute(str, l + 1, r);
-                    str = Swap(str, l, i);
+                    str = Swap(str, start, i);
+                    Permute(str, start+ 1, end);
+                    str = Swap(str, start, i);
                 }
             }
         }
-
-        /**
-        * Swap Characters at position
-        * @param a string value
-        * @param i position 1
-        * @param j position 2
-        * @return swapped string
-        */
-        public static String Swap(String a,
+        public static String Swap(String str,
                                   int i, int j)
         {
             char temp;
-            char[] charArray = a.ToCharArray();
+            char[] charArray = str.ToCharArray();
             temp = charArray[i];
             charArray[i] = charArray[j];
             charArray[j] = temp;
             string s = new string(charArray);
             return s;
         }
-
-        // Driver Code
         
     }
 }
