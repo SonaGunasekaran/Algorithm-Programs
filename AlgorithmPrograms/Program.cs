@@ -7,7 +7,7 @@ namespace AlgorithmPrograms
     {
        public static void Main()
        {
-            Console.WriteLine("1.Permutation of string\n2.Binary Search");
+            Console.WriteLine("1.Permutation of string\n2.Binary Search\n3.Insertion Sort");
             Console.Write("Enter your choice:");
             int choice = Convert.ToInt32(Console.ReadLine());
             switch (choice)
@@ -33,6 +33,14 @@ namespace AlgorithmPrograms
                     {
                         Console.WriteLine("the word {0} is not found", word);
                     }
+                    break;
+                case 3:
+                    string filepathins = @"C:\Users\Sona G\source\repos\AlgorithmPrograms\AlgorithmPrograms\wordFile.txt";
+                    string sort = File.ReadAllText(filepathins);
+                    string[] sortArray = sort.Split(" ");
+                    InsertionSort insertionSort = new InsertionSort();
+                    insertionSort.Sort(sortArray);
+                    insertionSort.Display(sortArray);
                     break;
 
                 default:
