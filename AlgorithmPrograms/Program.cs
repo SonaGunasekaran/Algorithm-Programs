@@ -7,7 +7,7 @@ namespace AlgorithmPrograms
     {
        public static void Main()
        {
-            Console.WriteLine("1.Permutation of string\n2.Binary Search\n3.Insertion Sort");
+            Console.WriteLine("1.Permutation of string\n2.Binary Search\n3.Insertion Sort\n4.Bubble Sort");
             Console.Write("Enter your choice:");
             int choice = Convert.ToInt32(Console.ReadLine());
             switch (choice)
@@ -41,6 +41,12 @@ namespace AlgorithmPrograms
                     InsertionSort insertionSort = new InsertionSort();
                     insertionSort.Sort(sortArray);
                     insertionSort.Display(sortArray);
+                    break;
+                case 4:
+                    int[] arr = { 77,7,17,34,56,12,68 };
+                    BubbleSort bubbleSort = new BubbleSort();
+                    arr = bubbleSort.Sort(arr);
+                    bubbleSort.Display(arr);
                     break;
 
                 default:
