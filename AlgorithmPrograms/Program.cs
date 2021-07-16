@@ -7,7 +7,10 @@ namespace AlgorithmPrograms
     {
        public static void Main()
        {
-            Console.WriteLine("1.Permutation of string\n2.Binary Search\n3.Insertion Sort\n4.Bubble Sort");
+            string filepath = @"C:\Users\Sona G\source\repos\AlgorithmPrograms\AlgorithmPrograms\wordFile.txt";
+            string text = File.ReadAllText(filepath);
+            string[] textArray = text.Split(" ");
+            Console.WriteLine("1.Permutation of string\n2.Binary Search\n3.Insertion Sort\n4.Bubble Sort\n5.Anagram");
             Console.Write("Enter your choice:");
             int choice = Convert.ToInt32(Console.ReadLine());
             switch (choice)
@@ -18,9 +21,7 @@ namespace AlgorithmPrograms
                     Permutation.Permute(str, 0, n - 1);
                     break;
                 case 2:
-                    string filepath = @"C:\Users\Sona G\source\repos\AlgorithmPrograms\AlgorithmPrograms\wordFile.txt";
-                    string text = File.ReadAllText(filepath);
-                    string[] textArray = text.Split(" ");
+                    
                     BinarySearch binarySearch = new BinarySearch(textArray);
                     Console.WriteLine("Enter a word to search:");
                     string word = Console.ReadLine();
@@ -35,18 +36,20 @@ namespace AlgorithmPrograms
                     }
                     break;
                 case 3:
-                    string filepathins = @"C:\Users\Sona G\source\repos\AlgorithmPrograms\AlgorithmPrograms\wordFile.txt";
-                    string sort = File.ReadAllText(filepathins);
-                    string[] sortArray = sort.Split(" ");
+                    
                     InsertionSort insertionSort = new InsertionSort();
-                    insertionSort.Sort(sortArray);
-                    insertionSort.Display(sortArray);
+                    insertionSort.Sort(textArray);
+                    insertionSort.Display(textArray);
                     break;
                 case 4:
                     int[] arr = { 77,7,17,34,56,12,68 };
                     BubbleSort bubbleSort = new BubbleSort();
                     arr = bubbleSort.Sort(arr);
                     bubbleSort.Display(arr);
+                    break;
+                case 5:
+                    Anagram anagram = new Anagram();
+                    anagram.CheckAnagram("abcd", "dcba");
                     break;
 
                 default:
