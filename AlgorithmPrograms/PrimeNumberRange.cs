@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 namespace AlgorithmPrograms
 {
-    class PrimeNumberRange
-    {
+   public class PrimeNumberRange
+   {
+        List<int> primeList = new List<int>();
         public void IsPrime(int a, int b)
         {
             int i, j, flag;
@@ -25,7 +26,25 @@ namespace AlgorithmPrograms
                 // if flag = 1 then i is prime
                 // else i is not prime
                 if (flag == 1)
-                    Console.WriteLine(i);
+                   Console.WriteLine(i);
+                   PrimePalindrome(i);
+            }
+        }
+        public void PrimePalindrome(int num)
+        {
+            Palindrome palindrome = new Palindrome();
+            if (palindrome.IsPalindrome(num) == 1)
+            {
+               primeList.Add(num);
+            }
+            
+        }
+        //Printing Prime Palindrome
+        public void PrintPalindrome()
+        {
+            foreach (int i in primeList)
+            {
+                Console.WriteLine(i);
             }
         }
     }
