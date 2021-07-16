@@ -4,11 +4,11 @@ using System.Text;
 
 namespace AlgorithmPrograms
 {
-    class BubbleSort
+    class BubbleSort<T> where T : IComparable
     {
-        public int[] Sort(int[] arr)
+        public T[] Sort(T[] arr)
         {
-            int temp;
+            T temp;
             int n = arr.Length;
             //sorting the elements 
             for (int i = 0; i < n-1; i++)
@@ -26,7 +26,7 @@ namespace AlgorithmPrograms
             return arr;
         }
         //Printing the array in ascending order
-        public void Display(int[] arr)
+        public void Display(T [] arr)
         {
             for (int i = 0; i < arr.Length; i++)
             {

@@ -4,11 +4,11 @@ using System.Text;
 
 namespace AlgorithmPrograms
 {
-    class InsertionSort
+    class InsertionSort<T> where T : IComparable
     {
-        public void Sort(string[] textArr)
+        public void Sort(T[] textArr)
         {
-            string max;
+            T max;
             for (int i = 1; i < textArr.Length; i++)
             {
                 max = textArr[i];
