@@ -4,21 +4,21 @@ using System.Text;
 
 namespace AlgorithmPrograms
 {
-    class BinarySearch
+    class BinarySearch<T> where T : IComparable
     {
-        string[] arr;
-        public BinarySearch(string[] arr)
+        T[] arr;
+        public BinarySearch(T[] arr)
         {
             this.arr = arr;
             Array.Sort(this.arr);
         }
-        public int FindWord(string word, int min, int max)
+        public int FindWord(T word, int min, int max)
         {
             int mid = min;
             while (min < max)
             {
                 mid = (min + max) / 2;
-                if (arr[mid] == word)
+                if (arr[mid].CompareTo(word)==0)
                 {
                     return 1;
                 }
@@ -31,7 +31,7 @@ namespace AlgorithmPrograms
                     min = mid + 1;
                 }
             }
-            if (arr[mid] != word)
+            if (arr[mid].CompareTo(word)!=0)
             {
                 return 0;
             }
